@@ -3,7 +3,7 @@ import math
 def prime_list_below_num(max_num):
     # num = int(math.sqrt(max_num))
     potential_primes = list(range(3,max_num,2))
-    num_loc = 3
+    num_loc = 2
     primes = [2,3,5]
     while num_loc < len(potential_primes):
         prime_num = True

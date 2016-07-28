@@ -58,8 +58,11 @@ arr = np.array(data, dtype=np.int32).reshape(20,20) # put in a matrix of 20 by 2
 def max_from_row(vec, n):
     max_prod = 0
     for i in range(len(vec[:-n+1])):
-        # print(vec[i] * vec[i+1] * vec[i+2] * vec[i+3])
-        max_prod = max(max_prod, vec[i] * vec[i+1] * vec[i+2] * vec[i+3])
+        prod = 1
+        for j in range(n):
+            prod *= vec[i + j]
+        # print(prod)
+        max_prod = max(max_prod, prod)
     return max_prod
 
 def max_from_array(arr):
@@ -85,7 +88,7 @@ matrix_maxes.append(max_from_array(np.rot90(arr)))
 matrix_maxes.append(max_from_array_diag(arr))
 # Up diagonals
 matrix_maxes.append(max_from_array_diag(np.fliplr(arr)))
-print(matrix_maxes)
+# print(matrix_maxes)
 print(max(matrix_maxes))
 
 

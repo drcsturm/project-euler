@@ -47,3 +47,50 @@ grid = """
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 """
+
+import re
+import numpy as np
+adjacent_nums = 4
+
+data = [int(i) for i in re.findall("[0-9]+", grid)] # make a list of integers
+arr = np.array(data, dtype=np.int32).reshape(20,20) # put in a matrix of 20 by 20
+
+def max_from_row(vec, n):
+    max_prod = 0
+    for i in range(len(vec[:-n+1])):
+        # print(vec[i] * vec[i+1] * vec[i+2] * vec[i+3])
+        max_prod = max(max_prod, vec[i] * vec[i+1] * vec[i+2] * vec[i+3])
+    return max_prod
+
+def max_from_array(arr):
+    max_prod = 0
+    for row in arr:
+        max_prod = max(max_prod, max_from_row(row, adjacent_nums))
+    return max_prod
+
+def max_from_array_diag(arr):
+    n = len(arr) - adjacent_nums
+    max_prod = 0
+    for i in range(-n,n+1):
+        # print(arr.diagonal(i))
+        max_prod = max(max_prod, max_from_row(arr.diagonal(i), adjacent_nums))
+    return max_prod
+
+matrix_maxes = []
+# Left or Right
+matrix_maxes.append(max_from_array(arr))
+# Up or Down
+matrix_maxes.append(max_from_array(np.rot90(arr)))
+# Down diagonals
+matrix_maxes.append(max_from_array_diag(arr))
+# Up diagonals
+matrix_maxes.append(max_from_array_diag(np.fliplr(arr)))
+print(matrix_maxes)
+print(max(matrix_maxes))
+
+
+
+
+
+
+

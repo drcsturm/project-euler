@@ -10,6 +10,6 @@ for i in range(999,100,-1):
     for j in range(999,100,-1):
         if palindrome(str(i * j)):
             if i*j > max_palindrome:
-                print(i, j, i * j)
+                # print(i, j, i * j)
                 max_palindrome = i * j
 print(max_palindrome)

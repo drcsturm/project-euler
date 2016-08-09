@@ -2,7 +2,7 @@
 
 # What is the 10 001st prime number?
 
-from utils.primes import prime_list_below_num
+from utils.primes import primesfrom2to
 
-plist = prime_list_below_num(200000)
+plist = primesfrom2to(200000)
 print(plist[10000])

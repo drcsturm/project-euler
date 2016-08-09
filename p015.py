@@ -16,5 +16,5 @@ z[:,0] = 1
 for i in range(1,size+1):
     for j in range(1,size+1):
         z[i,j] = z[i-1,j] + z[i,j-1]
-print(z[size,size])
 print(np.rot90(np.rot90(z)))
+print(z[size,size])

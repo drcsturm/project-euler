@@ -15,6 +15,6 @@ for a in range(1,501):
             aa = a
             bb = b
 c = 1000 - aa - bb
-print(aa,bb,c)
+# print(aa,bb,c)
 print(aa*bb*c)
 

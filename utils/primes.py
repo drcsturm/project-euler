@@ -21,6 +21,14 @@ def colin_prime_list_below_num(max_num):
     return primes
 
 
+def is_prime(n):
+    if n < 3:return False
+    if n % 2 == 0:return False
+    for num in range(3, int(n**0.5)+1, 2):
+        if n % num == 0:return False
+    return True
+
+
 #!/usr/bin/env python
 # import psyco; psyco.full()
 

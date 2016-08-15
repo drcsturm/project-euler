@@ -22,6 +22,6 @@ for i in range(10,100):
 				ni = int(si.replace(a,''))
 				nj = int(sj.replace(a,''))
 				if float(j/i) == float(nj/ni):
-					print(j,i,nj,ni,j/i)
+					# print(j,i,nj,ni,j/i)
 					ans *= ni/nj
 print(ans)

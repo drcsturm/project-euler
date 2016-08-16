@@ -11,6 +11,6 @@ for i in range(10, 100000):
 	for j in str(i):
 		d += math.factorial(int(j))
 	if d == i:
-		print(i)
+		# print(i)
 		ans += i
 print(ans)

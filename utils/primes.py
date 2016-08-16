@@ -394,5 +394,6 @@ if __name__ == '__main__':
     max_num = 1000000
     # plist = prime_list_below_num(max_num)
     plist = primesfrom2to(max_num)
+    # plist = primesfrom2to(1000000)
     print(plist)
 

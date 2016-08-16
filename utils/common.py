@@ -16,6 +16,15 @@ def divisors(num, proper=True):
             i += 1
     return sorted(divisor_list)
 
+
+def pandigital(num, start=1, end=9):
+    pannum = [str(i) for i in range(start, end+1)]
+    if pannum == sorted(str(num)):
+        return True
+    else:
+        return False
+
+
 if __name__ == "__main__":
     # print(len(divisors(100000000000000)))
     val = 2**5 * 3**4 * 5**3 * 7

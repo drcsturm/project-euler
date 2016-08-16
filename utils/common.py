@@ -25,6 +25,12 @@ def pandigital(num, start=1, end=9):
         return False
 
 
+def read_words(filename):
+    with open(filename) as f:
+        raw_text = f.readline()
+    return [w for w in raw_text.replace('"',"").split(",")]
+
+
 if __name__ == "__main__":
     # print(len(divisors(100000000000000)))
     val = 2**5 * 3**4 * 5**3 * 7

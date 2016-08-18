@@ -2,6 +2,33 @@
 
 import math
 
+def triangle(n):
+    return n * (n + 1) / 2
+
+def is_triangle(n):
+    return ((8 * n + 1)**0.5 - 1) / 2 % 1 == 0
+
+def pentagonal(n):
+    return n * (3 * n - 1) / 2
+
+def is_pentagonal(n):
+    if n <= 0:return False
+    return ((24 * n + 1)**0.5 + 1) / 6 % 1 == 0
+
+def hexagonal(n):
+    return n * (2 * n - 1)
+
+def is_hexagonal(n):
+    return ((8 * n + 1)**0.5 + 1) / 4 % 1 == 0
+
+def is_quadratic(n, q_type=None, a=None, b=None, c=None):
+    if not q_type and (a is None or b is None or c is None):return False
+    if q_type == 'triangle':a=1;b=1;c=-2
+    if q_type == 'pentagonal':a=3;b=-1;c=-2
+    if q_type == 'hexagonal':a=2;b=-1;c=-1
+    if a is None or b is None or c is None:return False
+    return ((-4*a*c * n + b**2)**0.5 + 1) / 2*a % 1 == 0 or ((-4*a*c * n + b**2)**0.5 - 1) / 2*a % 1 == 0
+
 def divisors(num, proper=True):
     divisor_list = [1]
     if not proper:

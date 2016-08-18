@@ -8,11 +8,7 @@
 
 # Find the pair of pentagonal numbers, Pj and Pk, for which their sum and difference are pentagonal and D = |Pk − Pj| is minimised; what is the value of D?
 
-def pentagonal(n):
-	return n * (3 * n - 1) / 2
-def is_pentagonal(n):
-	if n <= 0:return False
-	return ((24 * n + 1)**0.5 + 1) / 6 % 1 == 0
+from utils.common import pentagonal, is_pentagonal
 
 done = False
 maxp = 10000
